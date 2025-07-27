@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Supplement & Topical Tracker</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 30px auto;
+      max-width: 900px;
+      background: #fafafa;
+      color: #222;
+      line-height: 1.6;
+      padding: 0 15px;
+    }
+    h1, h2 {
+      text-align: center;
+      margin-top: 40px;
+      color: #2c3e50;
+      font-weight: 700;
+    }
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 8px;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-size: 15px;
+    }
+    thead th {
+      background-color: #34495e;
+      color: white;
+      padding: 14px 12px;
+      text-align: left;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      border-radius: 8px 8px 0 0;
+      user-select: none;
+    }
+    tbody tr {
+      border-radius: 0 0 8px 8px;
+      transition: background-color 0.2s ease;
+    }
+    tbody tr:nth-child(odd) {
+      background-color: #ecf0f1;
+    }
+    tbody tr:hover {
+      background-color: #d1d8e0;
+    }
+    td {
+      padding: 12px;
+      vertical-align: top;
+      border-bottom: none;
+      color: #2d3436;
+    }
+    #total-count {
+      margin-top: 15px;
+      font-weight: 700;
+      text-align: right;
+      color: #2d3436;
+      font-size: 17px;
+      user-select: none;
+    }
+    section {
+      margin-bottom: 60px;
+    }
+
+    /* Definition box styles */
+    #definition {
+      background: #e3f2fd;
+      border-left: 6px solid #2196f3;
+      padding: 20px 25px;
+      margin-bottom: 40px;
+      color: #0d47a1;
+      font-size: 17px;
+      line-height: 1.5;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(33, 150, 243, 0.2);
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #definition strong {
+      font-weight: 700;
+      color: #1565c0;
+    }
+  </style>
+</head>
+<body>
+
+<section id="wholefood-note">
+    <p><strong>Note:</strong> Supplements cannot replicate all benefits of whole foods. Whole foods provide complex nutritional matrices: fiber, antioxidants, phytochemicals, and other compounds working synergistically. Nutrient absorption and utilization differ in real food vs supplements. The body often absorbs and uses nutrients from whole foods better than isolated nutrients in supplements.</p>
+  </section>
+
+
+
+  <section id="definition">
+    <p><strong>What is a Supplement?</strong> A <em>supplement</em> is a product taken orally that contains one or more ingredients (such as vitamins, minerals, herbs, amino acids, or other substances) intended to add nutritional value to the diet. Supplements are consumed to provide nutrients or beneficial compounds that might not be sufficiently obtained from food alone. They can be naturally occurring or synthetically produced, but they are not the same as whole foods.</p>
+  </section>
+
+  <section id="supplements">
+    <h1>Supplement Tracker</h1>
+    <table id="supplement-table" role="table" aria-label="List of supplements">
+      <thead>
+        <tr>
+          <th scope="col">Supplement</th>
+          <th scope="col">Dosage</th>
+          <th scope="col">Timing</th>
+          <th scope="col">Method</th>
+          <th scope="col">Purpose / Notes</th>
+          <th scope="col">Effect / Sensations</th>
+          <th scope="col">Body Role / Simple Explanation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>NAG</td>
+          <td>1000mg</td>
+          <td>Morning</td>
+          <td>With food</td>
+          <td>Supports gut lining and repair</td>
+          <td>Improved digestion, reduced gut irritation, better stool regularity, gut calm</td>
+          <td>Helps rebuild and maintain the gut lining to improve digestion and reduce inflammation</td>
+        </tr>
+        <tr>
+          <td>BPC-157</td>
+          <td>1000mcg</td>
+          <td>Morning</td>
+          <td>With food</td>
+          <td>Promotes tissue and gut healing</td>
+          <td>Reduced pain/inflammation, faster injury recovery, improved gut comfort</td>
+          <td>Accelerates healing of tissues and reduces inflammation, especially in the gut</td>
+        </tr>
+        <tr>
+          <td>Caffeine</td>
+          <td>100mg</td>
+          <td>Morning (sparingly)</td>
+          <td>After food</td>
+          <td>Energy and alertness</td>
+          <td>Increased focus and energy, possible jitteriness if sensitive</td>
+          <td>Stimulates the central nervous system to boost alertness and energy</td>
+        </tr>
+        <tr>
+          <td>DGL + Anise Seed</td>
+          <td>400mg + 55mg</td>
+          <td>Before heavy meals (occasionally)</td>
+          <td>Before food</td>
+          <td>Supports digestion and gut health</td>
+          <td>Reduced heartburn, improved digestion, less bloating</td>
+          <td>Helps soothe the stomach lining and improve digestion, reducing acid reflux</td>
+        </tr>
+        <tr>
+          <td>Magnesium Glycinate</td>
+          <td>200mg</td>
+          <td>Night</td>
+          <td>Any</td>
+          <td>Supports relaxation and sleep</td>
+          <td>Calmness, easier sleep onset, reduced muscle tension</td>
+          <td>Essential mineral that relaxes muscles and calms the nervous system for better sleep</td>
+        </tr>
+        <tr>
+          <td>R-Lipoic Acid</td>
+          <td>300mg</td>
+          <td>Morning</td>
+          <td>With food</td>
+          <td>Antioxidant, supports mitochondrial function</td>
+          <td>Improved energy metabolism, reduced oxidative stress</td>
+          <td>Powerful antioxidant that helps cells produce energy and fight damage</td>
+        </tr>
+        <tr>
+          <td>Probiotic</td>
+          <td>Varies</td>
+          <td>Morning</td>
+          <td>Empty stomach</td>
+          <td>Gut health support</td>
+          <td>Improved digestion, balanced gut flora, possible initial bloating</td>
+          <td>Provides beneficial bacteria that balance gut flora and improve digestion</td>
+        </tr>
+        <tr>
+          <td>L-Tyrosine</td>
+          <td>500mg</td>
+          <td>Morning</td>
+          <td>With food</td>
+          <td>Supports focus and mood</td>
+          <td>Increased alertness, reduced stress, improved mental clarity</td>
+          <td>Amino acid used by the brain to make dopamine, supporting focus and mood</td>
+        </tr>
+        <tr>
+          <td>Ginkgo Biloba</td>
+          <td>125mg</td>
+          <td>Morning</td>
+          <td>With food</td>
+          <td>Improves blood flow and cognition</td>
+          <td>Enhanced memory and focus, possible mild energy boost</td>
+          <td>Improves blood circulation, supporting brain function and memory</td>
+        </tr>
+        <tr>
+          <td>NMNH</td>
+          <td>250mg</td>
+          <td>Morning</td>
+          <td>Empty stomach</td>
+          <td>Supports NAD+ metabolism</td>
+          <td>Increased cellular energy, improved stamina</td>
+          <td>Boosts cellular energy production by supporting NAD+ metabolism</td>
+        </tr>
+        <tr>
+          <td>Melatonin</td>
+          <td>1-3mg</td>
+          <td>Night (as needed)</td>
+          <td>Any</td>
+          <td>Sleep aid</td>
+          <td>Faster sleep onset, improved sleep quality, possible grogginess next day</td>
+          <td>Hormone that signals the body to prepare for sleep and regulate the sleep cycle</td>
+        </tr>
+        <tr>
+          <td>Zinc Carnosine</td>
+          <td>18mg zinc / 86mg compound</td>
+          <td>Morning</td>
+          <td>With food</td>
+          <td>Gut lining and immune support</td>
+          <td>Reduced gut inflammation, better digestion, immune system support</td>
+          <td>Supports gut lining repair and strengthens immune defenses</td>
+        </tr>
+        <tr>
+          <td>KSM-66 (Ashwagandha)</td>
+          <td>600mg</td>
+          <td>Morning (paused)</td>
+          <td>Empty stomach</td>
+          <td>Stress reduction</td>
+          <td>Reduced anxiety and stress, improved mood and calmness</td>
+          <td>Adaptogen that helps the body manage stress and promotes relaxation</td>
+        </tr>
+        <tr>
+          <td>Vitamin D3</td>
+          <td>125mcg (5000 IU)</td>
+          <td>Morning (as needed)</td>
+          <td>With food</td>
+          <td>Supports immunity and bone health</td>
+          <td>Improved mood, better immune response, increased energy</td>
+          <td>Vitamin essential for bone strength and immune system function</td>
+        </tr>
+        <tr>
+          <td>L-Theanine</td>
+          <td>100mg</td>
+          <td>Morning</td>
+          <td>With food</td>
+          <td>Calm focus</td>
+          <td>Reduced stress, relaxed alertness</td>
+          <td>Amino acid that promotes calmness while maintaining alertness</td>
+        </tr>
+        <tr>
+          <td>CoQ10</td>
+          <td>Varies</td>
+          <td>Morning (not daily)</td>
+          <td>With food</td>
+          <td>Supports heart and energy</td>
+          <td>Increased energy, reduced fatigue</td>
+          <td>Supports energy production in cells, especially in the heart</td>
+        </tr>
+        <tr>
+          <td>Hydrolyzed Collagen + L-Ornithine</td>
+          <td>4000mg + 60mg</td>
+          <td>Morning</td>
+          <td>With food</td>
+          <td>Supports skin and joints</td>
+          <td>Improved skin elasticity, joint comfort</td>
+          <td>Collagen supports skin and joints; L-Ornithine helps detox and tissue repair</td>
+        </tr>
+        <tr>
+          <td>Taurine</td>
+          <td>1000mg</td>
+          <td>Morning</td>
+          <td>With food or empty stomach</td>
+          <td>Hydration and calm</td>
+          <td>Improved hydration, reduced anxiety</td>
+          <td>Supports cell hydration and calms the nervous system</td>
+        </tr>
+        <tr>
+          <td>Vitamin C</td>
+          <td>1000mg</td>
+          <td>Morning</td>
+          <td>With food</td>
+          <td>Antioxidant and immune support</td>
+          <td>Improved immune response, reduced oxidative stress</td>
+          <td>Powerful antioxidant that supports immune health and tissue repair</td>
+        </tr>
+        <tr>
+          <td>Rhodiola Rosea</td>
+          <td>250mg (4:1 extract)</td>
+          <td>Morning</td>
+          <td>With food</td>
+          <td>Supports stress resilience and endurance</td>
+          <td>Reduced fatigue, improved mental stamina</td>
+          <td>Adaptogen that boosts resistance to physical and mental stress</td>
+        </tr>
+        <tr>
+          <td>NAC</td>
+          <td>600mg</td>
+          <td>Morning</td>
+          <td>Empty stomach</td>
+          <td>Liver support and antioxidant</td>
+          <td>Improved detoxification, lung support</td>
+          <td>Helps replenish glutathione, a key antioxidant for detox and lung health</td>
+        </tr>
+        <tr>
+          <td>Beef Liver</td>
+          <td>1500mg</td>
+          <td>Morning</td>
+          <td>With food</td>
+          <td>Nutrient-dense organ support</td>
+          <td>Increased energy, better nutrient status</td>
+          <td>Rich source of vitamins and minerals that boost overall energy and health</td>
+        </tr>
+        <tr>
+          <td>Vegan Omega-3 (DHA + EPA)</td>
+          <td>500mg algal oil (225mg omega-3)</td>
+          <td>Morning</td>
+          <td>With food</td>
+          <td>Brain and heart support</td>
+          <td>Improved cognitive function, reduced inflammation</td>
+          <td>Essential fatty acids that support brain, heart, and reduce inflammation</td>
+        </tr>
+        <tr>
+          <td>Lutein + Zeaxanthin</td>
+          <td>25mg + 5mg</td>
+          <td>Morning</td>
+          <td>With food</td>
+          <td>Supports eye health</td>
+          <td>Reduced eye strain, better vision clarity</td>
+          <td>Carotenoids that protect eyes from damage and improve vision</td>
+        </tr>
+        <tr>
+          <td>Astaxanthin</td>
+          <td>4mg</td>
+          <td>Morning</td>
+          <td>With food</td>
+          <td>Potent antioxidant, skin support</td>
+          <td>Improved skin appearance, reduced oxidative damage</td>
+          <td>Strong antioxidant that helps protect skin and cells from damage</td>
+        </tr>
+        <tr>
+          <td>Creatine</td>
+          <td>5g</td>
+          <td>Morning</td>
+          <td>Empty stomach</td>
+          <td>Supports strength, muscle recovery, and ATP production</td>
+          <td>Improved workout performance, better hydration, possible initial water retention</td>
+          <td>Supplies quick energy to muscles for strength and recovery</td>
+        </tr>
+        <tr>
+          <td>L-Glutamine</td>
+          <td>5g</td>
+          <td>Morning</td>
+          <td>Empty stomach</td>
+          <td>Supports gut lining, muscle recovery, and immune health</td>
+          <td>Improved gut comfort, reduced soreness, better recovery</td>
+          <td>Amino acid that helps heal the gut and supports muscle and immune function</td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="total-count">Total supplements listed: 0</div>
+  </section>
+
+  <section id="topicals">
+    <h2>Topical Tracker</h2>
+    <table role="table" aria-label="List of topicals">
+      <thead>
+        <tr>
+          <th scope="col">Topical</th>
+          <th scope="col">Application Time</th>
+          <th scope="col">Method</th>
+          <th scope="col">Purpose / Notes</th>
+          <th scope="col">Effect / Sensations</th>
+          <th scope="col">Body Role / Simple Explanation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vanicream</td>
+          <td>After face cleanse or splashing water</td>
+          <td>Apply to damp face or body</td>
+          <td>Moisturizes without irritation</td>
+          <td>Hydrated skin, soothing, non-greasy feel</td>
+          <td>Provides gentle hydration and soothes skin without clogging pores or irritation</td>
+        </tr>
+        <tr>
+          <td>White Petrolatum</td>
+          <td>Night only</td>
+          <td>Apply as barrier protectant to areas after moisturizer</td>
+          <td>Protects skin barrier, locks moisture</td>
+          <td>Thick protective layer, skin feels sealed and moisturized</td>
+          <td>Creates a moisture barrier to protect and lock hydration into the skin overnight</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <script>
+    // Calculate total supplements count and update the div
+    const supplementTable = document.getElementById('supplement-table');
+    const totalCountDiv = document.getElementById('total-count');
+    const supplementCount = supplementTable.tBodies[0].rows.length;
+    totalCountDiv.textContent = `Total supplements listed: ${supplementCount}`;
+  </script>
+
+</body>
+</html>
