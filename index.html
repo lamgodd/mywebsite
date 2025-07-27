@@ -8,7 +8,7 @@
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 30px auto;
-      max-width: 900px;
+      max-width: 1200px;
       background: #fafafa;
       color: #222;
       line-height: 1.6;
@@ -26,12 +26,12 @@
       border-spacing: 0 8px;
       background: white;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      font-size: 15px;
+      font-size: 14px;
     }
     thead th {
       background-color: #34495e;
       color: white;
-      padding: 14px 12px;
+      padding: 12px 10px;
       text-align: left;
       font-weight: 600;
       letter-spacing: 0.03em;
@@ -49,10 +49,27 @@
       background-color: #d1d8e0;
     }
     td {
-      padding: 12px;
+      padding: 10px;
       vertical-align: top;
       border-bottom: none;
       color: #2d3436;
+    }
+    .study-links {
+      font-size: 12px;
+    }
+    .study-links a {
+      color: #2980b9;
+      text-decoration: none;
+      margin-right: 8px;
+      display: inline-block;
+      padding: 2px 6px;
+      background: #ecf0f1;
+      border-radius: 3px;
+      margin-bottom: 4px;
+    }
+    .study-links a:hover {
+      background: #3498db;
+      color: white;
     }
     #total-count {
       margin-top: 15px;
@@ -77,7 +94,7 @@
       line-height: 1.5;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(33, 150, 243, 0.2);
-      max-width: 900px;
+      max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -92,8 +109,6 @@
 <section id="wholefood-note">
     <p><strong>Note:</strong> Supplements cannot replicate all benefits of whole foods. Whole foods provide complex nutritional matrices: fiber, antioxidants, phytochemicals, and other compounds working synergistically. Nutrient absorption and utilization differ in real food vs supplements. The body often absorbs and uses nutrients from whole foods better than isolated nutrients in supplements.</p>
   </section>
-
-
 
   <section id="definition">
     <p><strong>What is a Supplement?</strong> A <em>supplement</em> is a product taken orally that contains one or more ingredients (such as vitamins, minerals, herbs, amino acids, or other substances) intended to add nutritional value to the diet. Supplements are consumed to provide nutrients or beneficial compounds that might not be sufficiently obtained from food alone. They can be naturally occurring or synthetically produced, but they are not the same as whole foods.</p>
@@ -111,18 +126,25 @@
           <th scope="col">Purpose / Notes</th>
           <th scope="col">Effect / Sensations</th>
           <th scope="col">Body Role / Simple Explanation</th>
+          <th scope="col">Research Studies</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>NAG</td>
-          <td>1000mg</td>
-          <td>Morning</td>
-          <td>With food</td>
-          <td>Supports gut lining and repair</td>
-          <td>Improved digestion, reduced gut irritation, better stool regularity, gut calm</td>
-          <td>Helps rebuild and maintain the gut lining to improve digestion and reduce inflammation</td>
-        </tr>
+       <tr>
+  <td>NAG</td>
+  <td>1000mg</td>
+  <td>Morning</td>
+  <td>With food</td>
+  <td>Supports gut lining and repair</td>
+  <td>Improved digestion, reduced gut irritation, better stool regularity, gut calm</td>
+  <td>
+    Helps rebuild and maintain the gut lining to improve digestion and reduce inflammation.
+  </td>
+  <td class="study-links">
+    <a href="https://pubmed.ncbi.nlm.nih.gov/11121904/" target="_blank" rel="noopener noreferrer">Study 1</a>
+  </td>
+</tr>
+
         <tr>
           <td>BPC-157</td>
           <td>1000mcg</td>
@@ -131,6 +153,9 @@
           <td>Promotes tissue and gut healing</td>
           <td>Reduced pain/inflammation, faster injury recovery, improved gut comfort</td>
           <td>Accelerates healing of tissues and reduces inflammation, especially in the gut</td>
+          <td class="study-links">
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8275860/" target="_blank" rel="noopener noreferrer">Study 1</a>
+          </td>
         </tr>
         <tr>
           <td>Caffeine</td>
@@ -140,6 +165,9 @@
           <td>Energy and alertness</td>
           <td>Increased focus and energy, possible jitteriness if sensitive</td>
           <td>Stimulates the central nervous system to boost alertness and energy</td>
+          <td class="study-links">
+            -
+          </td>
         </tr>
         <tr>
           <td>DGL + Anise Seed</td>
@@ -149,6 +177,9 @@
           <td>Supports digestion and gut health</td>
           <td>Reduced heartburn, improved digestion, less bloating</td>
           <td>Helps soothe the stomach lining and improve digestion, reducing acid reflux</td>
+          <td class="study-links">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/39929150/" target="_blank" rel="noopener noreferrer">Study 1</a>
+          </td>
         </tr>
         <tr>
           <td>Magnesium Glycinate</td>
@@ -158,6 +189,10 @@
           <td>Supports relaxation and sleep</td>
           <td>Calmness, easier sleep onset, reduced muscle tension</td>
           <td>Essential mineral that relaxes muscles and calms the nervous system for better sleep</td>
+          <td class="study-links">
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3703169/" target="_blank" rel="noopener noreferrer">Study 1</a>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5926493/" target="_blank" rel="noopener noreferrer">Study 2</a>
+          </td>
         </tr>
         <tr>
           <td>R-Lipoic Acid</td>
@@ -167,6 +202,13 @@
           <td>Antioxidant, supports mitochondrial function</td>
           <td>Improved energy metabolism, reduced oxidative stress</td>
           <td>Powerful antioxidant that helps cells produce energy and fight damage</td>
+          <td class="study-links">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/8786016/" target="_blank" rel="noopener noreferrer">Study 1</a>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4478382/" target="_blank" rel="noopener noreferrer">Study 2</a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/32091656/" target="_blank" rel="noopener noreferrer">Study 3</a>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8746793/" target="_blank" rel="noopener noreferrer">Study 4</a>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4186984/" target="_blank" rel="noopener noreferrer">Study 5</a>
+          </td>
         </tr>
         <tr>
           <td>Probiotic</td>
@@ -176,6 +218,9 @@
           <td>Gut health support</td>
           <td>Improved digestion, balanced gut flora, possible initial bloating</td>
           <td>Provides beneficial bacteria that balance gut flora and improve digestion</td>
+          <td class="study-links">
+            -
+          </td>
         </tr>
         <tr>
           <td>L-Tyrosine</td>
@@ -185,6 +230,9 @@
           <td>Supports focus and mood</td>
           <td>Increased alertness, reduced stress, improved mental clarity</td>
           <td>Amino acid used by the brain to make dopamine, supporting focus and mood</td>
+          <td class="study-links">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/10230711/" target="_blank" rel="noopener noreferrer">Study 1</a>
+          </td>
         </tr>
         <tr>
           <td>Ginkgo Biloba</td>
@@ -194,6 +242,9 @@
           <td>Improves blood flow and cognition</td>
           <td>Enhanced memory and focus, possible mild energy boost</td>
           <td>Improves blood circulation, supporting brain function and memory</td>
+          <td class="study-links">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/25114079/" target="_blank" rel="noopener noreferrer">Study 1</a>
+          </td>
         </tr>
         <tr>
           <td>NMNH</td>
@@ -203,6 +254,9 @@
           <td>Supports NAD+ metabolism</td>
           <td>Increased cellular energy, improved stamina</td>
           <td>Boosts cellular energy production by supporting NAD+ metabolism</td>
+          <td class="study-links">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/33793246/" target="_blank" rel="noopener noreferrer">Study 1</a>
+          </td>
         </tr>
         <tr>
           <td>Melatonin</td>
@@ -212,6 +266,9 @@
           <td>Sleep aid</td>
           <td>Faster sleep onset, improved sleep quality, possible grogginess next day</td>
           <td>Hormone that signals the body to prepare for sleep and regulate the sleep cycle</td>
+          <td class="study-links">
+            -
+          </td>
         </tr>
         <tr>
           <td>Zinc Carnosine</td>
@@ -221,6 +278,9 @@
           <td>Gut lining and immune support</td>
           <td>Reduced gut inflammation, better digestion, immune system support</td>
           <td>Supports gut lining repair and strengthens immune defenses</td>
+          <td class="study-links">
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7146259/" target="_blank" rel="noopener noreferrer">Study 1</a>
+          </td>
         </tr>
         <tr>
           <td>KSM-66 (Ashwagandha)</td>
@@ -230,6 +290,9 @@
           <td>Stress reduction</td>
           <td>Reduced anxiety and stress, improved mood and calmness</td>
           <td>Adaptogen that helps the body manage stress and promotes relaxation</td>
+          <td class="study-links">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/34858513/" target="_blank" rel="noopener noreferrer">Study 1</a>
+          </td>
         </tr>
         <tr>
           <td>Vitamin D3</td>
@@ -239,6 +302,9 @@
           <td>Supports immunity and bone health</td>
           <td>Improved mood, better immune response, increased energy</td>
           <td>Vitamin essential for bone strength and immune system function</td>
+          <td class="study-links">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30611908/" target="_blank" rel="noopener noreferrer">Study 1</a>
+          </td>
         </tr>
         <tr>
           <td>L-Theanine</td>
@@ -248,6 +314,11 @@
           <td>Calm focus</td>
           <td>Reduced stress, relaxed alertness</td>
           <td>Amino acid that promotes calmness while maintaining alertness</td>
+          <td class="study-links">
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8080935/" target="_blank" rel="noopener noreferrer">Study 1</a>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6836118/" target="_blank" rel="noopener noreferrer">Study 2</a>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6574559/" target="_blank" rel="noopener noreferrer">Study 3</a>
+          </td>
         </tr>
         <tr>
           <td>CoQ10</td>
@@ -257,6 +328,10 @@
           <td>Supports heart and energy</td>
           <td>Increased energy, reduced fatigue</td>
           <td>Supports energy production in cells, especially in the heart</td>
+          <td class="study-links">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/24486339/" target="_blank" rel="noopener noreferrer">Study 1</a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/27076240/" target="_blank" rel="noopener noreferrer">Study 2</a>
+          </td>
         </tr>
         <tr>
           <td>Hydrolyzed Collagen + L-Ornithine</td>
@@ -266,6 +341,9 @@
           <td>Supports skin and joints</td>
           <td>Improved skin elasticity, joint comfort</td>
           <td>Collagen supports skin and joints; L-Ornithine helps detox and tissue repair</td>
+          <td class="study-links">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/38931263/" target="_blank" rel="noopener noreferrer">Study 1</a>
+          </td>
         </tr>
         <tr>
           <td>Taurine</td>
@@ -275,6 +353,10 @@
           <td>Hydration and calm</td>
           <td>Improved hydration, reduced anxiety</td>
           <td>Supports cell hydration and calms the nervous system</td>
+          <td class="study-links">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/26781281/" target="_blank" rel="noopener noreferrer">Study 1</a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/37836520/" target="_blank" rel="noopener noreferrer">Study 2</a>
+          </td>
         </tr>
         <tr>
           <td>Vitamin C</td>
@@ -284,6 +366,10 @@
           <td>Antioxidant and immune support</td>
           <td>Improved immune response, reduced oxidative stress</td>
           <td>Powerful antioxidant that supports immune health and tissue repair</td>
+          <td class="study-links">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/33653365/" target="_blank" rel="noopener noreferrer">Study 1</a>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9599586/" target="_blank" rel="noopener noreferrer">Study 2</a>
+          </td>
         </tr>
         <tr>
           <td>Rhodiola Rosea</td>
@@ -293,6 +379,11 @@
           <td>Supports stress resilience and endurance</td>
           <td>Reduced fatigue, improved mental stamina</td>
           <td>Adaptogen that boosts resistance to physical and mental stress</td>
+          <td class="study-links">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/28367055/" target="_blank" rel="noopener noreferrer">Study 1</a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/18307390/" target="_blank" rel="noopener noreferrer">Study 2</a>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/28219059/" target="_blank" rel="noopener noreferrer">Study 3</a>
+          </td>
         </tr>
         <tr>
           <td>NAC</td>
@@ -302,6 +393,9 @@
           <td>Liver support and antioxidant</td>
           <td>Improved detoxification, lung support</td>
           <td>Helps replenish glutathione, a key antioxidant for detox and lung health</td>
+          <td class="study-links">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/25957927/" target="_blank" rel="noopener noreferrer">Study 1</a>
+          </td>
         </tr>
         <tr>
           <td>Beef Liver</td>
@@ -311,6 +405,9 @@
           <td>Nutrient-dense organ support</td>
           <td>Increased energy, better nutrient status</td>
           <td>Rich source of vitamins and minerals that boost overall energy and health</td>
+          <td class="study-links">
+            -
+          </td>
         </tr>
         <tr>
           <td>Vegan Omega-3 (DHA + EPA)</td>
@@ -320,6 +417,9 @@
           <td>Brain and heart support</td>
           <td>Improved cognitive function, reduced inflammation</td>
           <td>Essential fatty acids that support brain, heart, and reduce inflammation</td>
+          <td class="study-links">
+            -
+          </td>
         </tr>
         <tr>
           <td>Lutein + Zeaxanthin</td>
@@ -329,6 +429,9 @@
           <td>Supports eye health</td>
           <td>Reduced eye strain, better vision clarity</td>
           <td>Carotenoids that protect eyes from damage and improve vision</td>
+          <td class="study-links">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/38582248/" target="_blank" rel="noopener noreferrer">Study 1</a>
+          </td>
         </tr>
         <tr>
           <td>Astaxanthin</td>
@@ -338,6 +441,9 @@
           <td>Potent antioxidant, skin support</td>
           <td>Improved skin appearance, reduced oxidative damage</td>
           <td>Strong antioxidant that helps protect skin and cells from damage</td>
+          <td class="study-links">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/40014233/" target="_blank" rel="noopener noreferrer">Study 1</a>
+          </td>
         </tr>
         <tr>
           <td>Creatine</td>
@@ -347,6 +453,9 @@
           <td>Supports strength, muscle recovery, and ATP production</td>
           <td>Improved workout performance, better hydration, possible initial water retention</td>
           <td>Supplies quick energy to muscles for strength and recovery</td>
+          <td class="study-links">
+            -
+          </td>
         </tr>
         <tr>
           <td>L-Glutamine</td>
@@ -356,6 +465,10 @@
           <td>Supports gut lining, muscle recovery, and immune health</td>
           <td>Improved gut comfort, reduced soreness, better recovery</td>
           <td>Amino acid that helps heal the gut and supports muscle and immune function</td>
+          <td class="study-links">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/32411324/" target="_blank" rel="noopener noreferrer">Study 1</a>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10783826/" target="_blank" rel="noopener noreferrer">Study 2</a>
+          </td>
         </tr>
       </tbody>
     </table>
