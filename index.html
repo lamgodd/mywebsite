@@ -102,6 +102,17 @@
       font-weight: 700;
       color: #1565c0;
     }
+
+    /* Diet section specific styles */
+    #diet thead th {
+      background-color: #27ae60;
+    }
+    #diet tbody tr:nth-child(odd) {
+      background-color: #e8f5e8;
+    }
+    #diet tbody tr:hover {
+      background-color: #d4edda;
+    }
   </style>
 </head>
 <body>
@@ -473,6 +484,43 @@
       </tbody>
     </table>
     <div id="total-count">Total supplements listed: 0</div>
+  </section>
+
+  <section id="diet">
+    <h2>Diet & Food Tracker</h2>
+    <table role="table" aria-label="List of foods and their nutritional benefits">
+      <thead>
+        <tr>
+          <th scope="col">Food</th>
+          <th scope="col">Serving Size</th>
+          <th scope="col">Key Nutrients (per serving)</th>
+          <th scope="col">Preparation Method</th>
+          <th scope="col">Health Benefits</th>
+          <th scope="col">Effect / Sensations</th>
+          <th scope="col">Body Role / Simple Explanation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Carrots</td>
+          <td>1 medium carrot (61g)</td>
+          <td>Beta-carotene (5,054mcg), Fiber (1.7g), Vitamin K (8.1mcg), Potassium (195mg)</td>
+          <td>Raw, steamed, roasted, or juiced</td>
+          <td>Eye health, immune support, skin health, antioxidant protection</td>
+          <td>Sweet, crunchy texture when raw; softer when cooked; may improve night vision over time</td>
+          <td>Rich in beta-carotene which converts to vitamin A, essential for vision, immune function, and healthy skin</td>
+        </tr>
+        <tr>
+          <td>Peas (Green)</td>
+          <td>1/2 cup cooked (80g)</td>
+          <td>Protein (4.3g), Fiber (4.4g), Vitamin C (11.4mg), Vitamin K (20.9mcg), Folate (50.7mcg)</td>
+          <td>Steamed, boiled, sautéed, or eaten fresh from pod</td>
+          <td>Heart health, blood sugar regulation, digestive health, protein source</td>
+          <td>Sweet, slightly starchy taste; satisfying and filling; may support steady energy levels</td>
+          <td>High in plant protein and fiber, helps maintain stable blood sugar and supports digestive health</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <section id="topicals">
