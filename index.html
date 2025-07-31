@@ -1,732 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Supplement & Topical Tracker</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 30px auto;
-      max-width: 1200px;
-      background: #fafafa;
-      color: #222;
-      line-height: 1.6;
-      padding: 0 15px;
-    }
-    h1, h2 {
-      text-align: center;
-      margin-top: 40px;
-      color: #2c3e50;
-      font-weight: 700;
-    }
-    table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0 8px;
-      background: white;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      font-size: 14px;
-    }
-    thead th {
-      background-color: #34495e;
-      color: white;
-      padding: 12px 10px;
-      text-align: left;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      border-radius: 8px 8px 0 0;
-      user-select: none;
-    }
-    tbody tr {
-      border-radius: 0 0 8px 8px;
-      transition: background-color 0.2s ease;
-    }
-    tbody tr:nth-child(odd) {
-      background-color: #ecf0f1;
-    }
-    tbody tr:hover {
-      background-color: #d1d8e0;
-    }
-    td {
-      padding: 10px;
-      vertical-align: top;
-      border-bottom: none;
-      color: #2d3436;
-    }
-    .study-links {
-      font-size: 12px;
-    }
-    .study-links a {
-      color: #2980b9;
-      text-decoration: none;
-      margin-right: 8px;
-      display: inline-block;
-      padding: 2px 6px;
-      background: #ecf0f1;
-      border-radius: 3px;
-      margin-bottom: 4px;
-    }
-    .study-links a:hover {
-      background: #3498db;
-      color: white;
-    }
-    #total-count {
-      margin-top: 15px;
-      font-weight: 700;
-      text-align: right;
-      color: #2d3436;
-      font-size: 17px;
-      user-select: none;
-    }
-    section {
-      margin-bottom: 60px;
-    }
-
-    /* Definition box styles */
-    #definition {
-      background: #e3f2fd;
-      border-left: 6px solid #2196f3;
-      padding: 20px 25px;
-      margin-bottom: 40px;
-      color: #0d47a1;
-      font-size: 17px;
-      line-height: 1.5;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(33, 150, 243, 0.2);
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    #definition strong {
-      font-weight: 700;
-      color: #1565c0;
-    }
-
-    /* Diet section specific styles */
-    #diet thead th {
-      background-color: #27ae60;
-    }
-    #diet tbody tr:nth-child(odd) {
-      background-color: #e8f5e8;
-    }
-    #diet tbody tr:hover {
-      background-color: #d4edda;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Health & Supplement Tracker</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 900px;
+    margin: 30px auto;
+    background: #fafafa;
+    color: #222;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  nav button {
+    background: #007acc;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  nav button:hover,
+  nav button.active {
+    background: #005fa3;
+  }
+  section {
+    display: none;
+  }
+  section.active {
+    display: block;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 0.4rem 0.6rem;
+    text-align: left;
+  }
+  th {
+    background: #007acc;
+    color: white;
+  }
+  h1, h2, h3 {
+    margin-bottom: 0.5rem;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+  ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+</style>
 </head>
 <body>
 
-<section id="wholefood-note">
-    <p><strong>Note:</strong> Supplements cannot replicate all benefits of whole foods. Whole foods provide complex nutritional matrices: fiber, antioxidants, phytochemicals, and other compounds working synergistically. Nutrient absorption and utilization differ in real food vs supplements. The body often absorbs and uses nutrients from whole foods better than isolated nutrients in supplements.</p>
-  </section>
+<header>
+  <h1>Health & Supplement Tracker</h1>
+</header>
 
-  <section id="definition">
-    <p><strong>What is a Supplement?</strong> A <em>supplement</em> is a product taken orally that contains one or more ingredients (such as vitamins, minerals, herbs, amino acids, or other substances) intended to add nutritional value to the diet. Supplements are consumed to provide nutrients or beneficial compounds that might not be sufficiently obtained from food alone. They can be naturally occurring or synthetically produced, but they are not the same as whole foods.</p>
-  </section>
+<nav>
+  <button class="nav-btn active" data-target="home">Home</button>
+  <button class="nav-btn" data-target="supplements">Supplements</button>
+  <button class="nav-btn" data-target="diet">Diet & Food Tracker</button>
+  <button class="nav-btn" data-target="topicals">Topical Tracker</button>
+</nav>
 
-  <section id="supplements">
-    <h1>Supplement Tracker</h1>
-    <table id="supplement-table" role="table" aria-label="List of supplements">
-      <thead>
-        <tr>
-          <th scope="col">Supplement</th>
-          <th scope="col">Dosage</th>
-          <th scope="col">Timing</th>
-          <th scope="col">Method</th>
-          <th scope="col">Purpose / Notes</th>
-          <th scope="col">Effect / Sensations</th>
-          <th scope="col">Body Role / Simple Explanation</th>
-          <th scope="col">Research Studies</th>
-        </tr>
-      </thead>
-      <tbody>
-       <tr>
-  <td>NAG</td>
-  <td>1000mg</td>
-  <td>Morning</td>
-  <td>With food</td>
-  <td>Supports gut lining and repair</td>
-  <td>Improved digestion, reduced gut irritation, better stool regularity, gut calm</td>
-  <td>
-    Helps rebuild and maintain the gut lining to improve digestion and reduce inflammation.
-  </td>
-  <td class="study-links">
-    <a href="https://pubmed.ncbi.nlm.nih.gov/11121904/" target="_blank" rel="noopener noreferrer">Study 1</a>
-  </td>
-</tr>
+<!-- Home / Notes -->
+<section id="home" class="active">
+  <h2>Overview & Notes</h2>
+  <p><strong>Supplements vs Whole Foods:</strong></p>
+  <ul>
+    <li>Supplements cannot replicate all benefits of whole foods.</li>
+    <li>Whole foods provide fiber, antioxidants, phytochemicals, and other synergistic compounds.</li>
+    <li>Body absorbs and utilizes nutrients better from whole foods than from isolated supplements.</li>
+  </ul>
+  <p><strong>What is a Supplement?</strong> A supplement is an orally consumed product containing vitamins, minerals, herbs, amino acids, or other substances, intended to add nutritional value to the diet. Supplements may be natural or synthetic but are not whole foods.</p>
+</section>
 
-        <tr>
-          <td>BPC-157</td>
-          <td>1000mcg</td>
-          <td>Morning</td>
-          <td>With food</td>
-          <td>Promotes tissue and gut healing</td>
-          <td>Reduced pain/inflammation, faster injury recovery, improved gut comfort</td>
-          <td>Accelerates healing of tissues and reduces inflammation, especially in the gut</td>
-          <td class="study-links">
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8275860/" target="_blank" rel="noopener noreferrer">Study 1</a>
-          </td>
-        </tr>
-        <tr>
-          <td>Caffeine</td>
-          <td>100mg</td>
-          <td>Morning (sparingly)</td>
-          <td>After food</td>
-          <td>Energy and alertness</td>
-          <td>Increased focus and energy, possible jitteriness if sensitive</td>
-          <td>Stimulates the central nervous system to boost alertness and energy</td>
-          <td class="study-links">
-            -
-          </td>
-        </tr>
-        <tr>
-          <td>DGL + Anise Seed</td>
-          <td>400mg + 55mg</td>
-          <td>Before heavy meals (occasionally)</td>
-          <td>Before food</td>
-          <td>Supports digestion and gut health</td>
-          <td>Reduced heartburn, improved digestion, less bloating</td>
-          <td>Helps soothe the stomach lining and improve digestion, reducing acid reflux</td>
-          <td class="study-links">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/39929150/" target="_blank" rel="noopener noreferrer">Study 1</a>
-          </td>
-        </tr>
-        <tr>
-          <td>Magnesium Glycinate</td>
-          <td>200mg</td>
-          <td>Night</td>
-          <td>Any</td>
-          <td>Supports relaxation and sleep</td>
-          <td>Calmness, easier sleep onset, reduced muscle tension</td>
-          <td>Essential mineral that relaxes muscles and calms the nervous system for better sleep</td>
-          <td class="study-links">
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3703169/" target="_blank" rel="noopener noreferrer">Study 1</a>
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5926493/" target="_blank" rel="noopener noreferrer">Study 2</a>
-          </td>
-        </tr>
-        <tr>
-          <td>R-Lipoic Acid</td>
-          <td>300mg</td>
-          <td>Morning</td>
-          <td>With food</td>
-          <td>Antioxidant, supports mitochondrial function</td>
-          <td>Improved energy metabolism, reduced oxidative stress</td>
-          <td>Powerful antioxidant that helps cells produce energy and fight damage</td>
-          <td class="study-links">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/8786016/" target="_blank" rel="noopener noreferrer">Study 1</a>
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4478382/" target="_blank" rel="noopener noreferrer">Study 2</a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/32091656/" target="_blank" rel="noopener noreferrer">Study 3</a>
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8746793/" target="_blank" rel="noopener noreferrer">Study 4</a>
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4186984/" target="_blank" rel="noopener noreferrer">Study 5</a>
-          </td>
-        </tr>
-        <tr>
-          <td>Probiotic</td>
-          <td>Varies</td>
-          <td>Morning</td>
-          <td>Empty stomach</td>
-          <td>Gut health support</td>
-          <td>Improved digestion, balanced gut flora, possible initial bloating</td>
-          <td>Provides beneficial bacteria that balance gut flora and improve digestion</td>
-          <td class="study-links">
-            -
-          </td>
-        </tr>
-        <tr>
-          <td>L-Tyrosine</td>
-          <td>500mg</td>
-          <td>Morning</td>
-          <td>With food</td>
-          <td>Supports focus and mood</td>
-          <td>Increased alertness, reduced stress, improved mental clarity</td>
-          <td>Amino acid used by the brain to make dopamine, supporting focus and mood</td>
-          <td class="study-links">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/10230711/" target="_blank" rel="noopener noreferrer">Study 1</a>
-          </td>
-        </tr>
-        <tr>
-          <td>Ginkgo Biloba</td>
-          <td>125mg</td>
-          <td>Morning</td>
-          <td>With food</td>
-          <td>Improves blood flow and cognition</td>
-          <td>Enhanced memory and focus, possible mild energy boost</td>
-          <td>Improves blood circulation, supporting brain function and memory</td>
-          <td class="study-links">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/25114079/" target="_blank" rel="noopener noreferrer">Study 1</a>
-          </td>
-        </tr>
-        <tr>
-          <td>NMNH</td>
-          <td>250mg</td>
-          <td>Morning</td>
-          <td>Empty stomach</td>
-          <td>Supports NAD+ metabolism</td>
-          <td>Increased cellular energy, improved stamina</td>
-          <td>Boosts cellular energy production by supporting NAD+ metabolism</td>
-          <td class="study-links">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/33793246/" target="_blank" rel="noopener noreferrer">Study 1</a>
-          </td>
-        </tr>
-        <tr>
-          <td>Melatonin</td>
-          <td>1-3mg</td>
-          <td>Night (as needed)</td>
-          <td>Any</td>
-          <td>Sleep aid</td>
-          <td>Faster sleep onset, improved sleep quality, possible grogginess next day</td>
-          <td>Hormone that signals the body to prepare for sleep and regulate the sleep cycle</td>
-          <td class="study-links">
-            -
-          </td>
-        </tr>
-        <tr>
-          <td>Zinc Carnosine</td>
-          <td>18mg zinc / 86mg compound</td>
-          <td>Morning</td>
-          <td>With food</td>
-          <td>Gut lining and immune support</td>
-          <td>Reduced gut inflammation, better digestion, immune system support</td>
-          <td>Supports gut lining repair and strengthens immune defenses</td>
-          <td class="study-links">
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7146259/" target="_blank" rel="noopener noreferrer">Study 1</a>
-          </td>
-        </tr>
-        <tr>
-          <td>KSM-66 (Ashwagandha)</td>
-          <td>600mg</td>
-          <td>Morning (paused)</td>
-          <td>Empty stomach</td>
-          <td>Stress reduction</td>
-          <td>Reduced anxiety and stress, improved mood and calmness</td>
-          <td>Adaptogen that helps the body manage stress and promotes relaxation</td>
-          <td class="study-links">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/34858513/" target="_blank" rel="noopener noreferrer">Study 1</a>
-          </td>
-        </tr>
-        <tr>
-          <td>Vitamin D3</td>
-          <td>125mcg (5000 IU)</td>
-          <td>Morning (as needed)</td>
-          <td>With food</td>
-          <td>Supports immunity and bone health</td>
-          <td>Improved mood, better immune response, increased energy</td>
-          <td>Vitamin essential for bone strength and immune system function</td>
-          <td class="study-links">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/30611908/" target="_blank" rel="noopener noreferrer">Study 1</a>
-          </td>
-        </tr>
-        <tr>
-          <td>L-Theanine</td>
-          <td>100mg</td>
-          <td>Morning</td>
-          <td>With food</td>
-          <td>Calm focus</td>
-          <td>Reduced stress, relaxed alertness</td>
-          <td>Amino acid that promotes calmness while maintaining alertness</td>
-          <td class="study-links">
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8080935/" target="_blank" rel="noopener noreferrer">Study 1</a>
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6836118/" target="_blank" rel="noopener noreferrer">Study 2</a>
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6574559/" target="_blank" rel="noopener noreferrer">Study 3</a>
-          </td>
-        </tr>
-        <tr>
-          <td>CoQ10</td>
-          <td>Varies</td>
-          <td>Morning (not daily)</td>
-          <td>With food</td>
-          <td>Supports heart and energy</td>
-          <td>Increased energy, reduced fatigue</td>
-          <td>Supports energy production in cells, especially in the heart</td>
-          <td class="study-links">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/24486339/" target="_blank" rel="noopener noreferrer">Study 1</a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/27076240/" target="_blank" rel="noopener noreferrer">Study 2</a>
-          </td>
-        </tr>
-        <tr>
-          <td>Hydrolyzed Collagen + L-Ornithine</td>
-          <td>4000mg + 60mg</td>
-          <td>Morning</td>
-          <td>With food</td>
-          <td>Supports skin and joints</td>
-          <td>Improved skin elasticity, joint comfort</td>
-          <td>Collagen supports skin and joints; L-Ornithine helps detox and tissue repair</td>
-          <td class="study-links">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/38931263/" target="_blank" rel="noopener noreferrer">Study 1</a>
-          </td>
-        </tr>
-        <tr>
-          <td>Taurine</td>
-          <td>1000mg</td>
-          <td>Morning</td>
-          <td>With food or empty stomach</td>
-          <td>Hydration and calm</td>
-          <td>Improved hydration, reduced anxiety</td>
-          <td>Supports cell hydration and calms the nervous system</td>
-          <td class="study-links">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/26781281/" target="_blank" rel="noopener noreferrer">Study 1</a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/37836520/" target="_blank" rel="noopener noreferrer">Study 2</a>
-          </td>
-        </tr>
-        <tr>
-          <td>Vitamin C</td>
-          <td>1000mg</td>
-          <td>Morning (paused, as needed)</td>
-          <td>With food</td>
-          <td>Antioxidant and immune support</td>
-          <td>Improved immune response, reduced oxidative stress</td>
-          <td>Powerful antioxidant that supports immune health and tissue repair</td>
-          <td class="study-links">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/33653365/" target="_blank" rel="noopener noreferrer">Study 1</a>
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9599586/" target="_blank" rel="noopener noreferrer">Study 2</a>
-          </td>
-        </tr>
-        <tr>
-          <td>Rhodiola Rosea</td>
-          <td>250mg (4:1 extract)</td>
-          <td>Morning</td>
-          <td>With food</td>
-          <td>Supports stress resilience and endurance</td>
-          <td>Reduced fatigue, improved mental stamina</td>
-          <td>Adaptogen that boosts resistance to physical and mental stress</td>
-          <td class="study-links">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/28367055/" target="_blank" rel="noopener noreferrer">Study 1</a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/18307390/" target="_blank" rel="noopener noreferrer">Study 2</a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/28219059/" target="_blank" rel="noopener noreferrer">Study 3</a>
-          </td>
-        </tr>
-        <tr>
-          <td>NAC</td>
-          <td>600mg</td>
-          <td>Morning</td>
-          <td>Empty stomach</td>
-          <td>Liver support and antioxidant</td>
-          <td>Improved detoxification, lung support</td>
-          <td>Helps replenish glutathione, a key antioxidant for detox and lung health</td>
-          <td class="study-links">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/25957927/" target="_blank" rel="noopener noreferrer">Study 1</a>
-          </td>
-        </tr>
-        <tr>
-          <td>Beef Liver</td>
-          <td>1500mg</td>
-          <td>Morning</td>
-          <td>With food</td>
-          <td>Nutrient-dense organ support</td>
-          <td>Increased energy, better nutrient status</td>
-          <td>Rich source of vitamins and minerals that boost overall energy and health</td>
-          <td class="study-links">
-            -
-          </td>
-        </tr>
-        <tr>
-          <td>Vegan Omega-3 (DHA + EPA)</td>
-          <td>500mg algal oil (225mg omega-3)</td>
-          <td>Morning</td>
-          <td>With food</td>
-          <td>Brain and heart support</td>
-          <td>Improved cognitive function, reduced inflammation</td>
-          <td>Essential fatty acids that support brain, heart, and reduce inflammation</td>
-          <td class="study-links">
-            -
-          </td>
-        </tr>
-        <tr>
-          <td>Lutein + Zeaxanthin</td>
-          <td>25mg + 5mg</td>
-          <td>Morning</td>
-          <td>With food</td>
-          <td>Supports eye health</td>
-          <td>Reduced eye strain, better vision clarity</td>
-          <td>Carotenoids that protect eyes from damage and improve vision</td>
-          <td class="study-links">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/38582248/" target="_blank" rel="noopener noreferrer">Study 1</a>
-          </td>
-        </tr>
-        <tr>
-          <td>Astaxanthin</td>
-          <td>4mg</td>
-          <td>Morning</td>
-          <td>With food</td>
-          <td>Potent antioxidant, skin support</td>
-          <td>Improved skin appearance, reduced oxidative damage</td>
-          <td>Strong antioxidant that helps protect skin and cells from damage</td>
-          <td class="study-links">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/40014233/" target="_blank" rel="noopener noreferrer">Study 1</a>
-          </td>
-        </tr>
-        <tr>
-          <td>Creatine</td>
-          <td>5g</td>
-          <td>Morning</td>
-          <td>Empty stomach</td>
-          <td>Supports strength, muscle recovery, and ATP production</td>
-          <td>Improved workout performance, better hydration, possible initial water retention</td>
-          <td>Supplies quick energy to muscles for strength and recovery</td>
-          <td class="study-links">
-            -
-          </td>
-        </tr>
-        <tr>
-          <td>L-Glutamine</td>
-          <td>5g</td>
-          <td>Morning</td>
-          <td>Empty stomach</td>
-          <td>Supports gut lining, muscle recovery, and immune health</td>
-          <td>Improved gut comfort, reduced soreness, better recovery</td>
-          <td>Amino acid that helps heal the gut and supports muscle and immune function</td>
-          <td class="study-links">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/32411324/" target="_blank" rel="noopener noreferrer">Study 1</a>
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10783826/" target="_blank" rel="noopener noreferrer">Study 2</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <div id="total-count">Total supplements listed: 0</div>
-  </section>
-
-<section id="diet">
-  <h2>Diet & Food Tracker</h2>
-  <table role="table" aria-label="List of foods and their nutritional benefits">
+<!-- Supplements -->
+<section id="supplements">
+  <h2>Supplements</h2>
+  <table>
     <thead>
       <tr>
-        <th scope="col">Food</th>
-        <th scope="col">Serving Size</th>
-        <th scope="col">Key Nutrients (per serving)</th>
-        <th scope="col">Preparation Method</th>
-        <th scope="col">Health Benefits</th>
-        <th scope="col">Effect / Sensations</th>
-        <th scope="col">Body Role / Simple Explanation</th>
+        <th>Supplement</th>
+        <th>Dose</th>
+        <th>Timing</th>
+        <th>With Food</th>
+        <th>Purpose/Benefit</th>
+        <th>Effects/Results</th>
+        <th>Notes</th>
       </tr>
     </thead>
     <tbody>
-      <!-- Fruits -->
-      <tr><th colspan="7" style="background:#e8f6ff;">🍓 Fruits</th></tr>
-      <tr>
-        <td>🍍 Pineapple</td>
-        <td>1 cup chunks (165g)</td>
-        <td>Vitamin C (78.9mg), Manganese (1.5mg), Bromelain</td>
-        <td>Fresh, juiced, grilled</td>
-        <td>Immune support, digestion aid, anti-inflammatory</td>
-        <td>Sweet, juicy; may cause tingling if sensitive</td>
-        <td>Vitamin C and bromelain support immunity and digestion</td>
-      </tr>
-      <tr>
-        <td>🍈 Cantaloupe</td>
-        <td>1 cup (160g)</td>
-        <td>Vitamin A (5,276 IU), Vitamin C (58mg), Potassium (473mg)</td>
-        <td>Fresh slices or blended in smoothies</td>
-        <td>Skin health, immune boost, hydration</td>
-        <td>Cooling and hydrating; mild sweetness</td>
-        <td>Beta-carotene supports vision and hydration</td>
-      </tr>
-      <tr>
-        <td>🍓 Strawberry</td>
-        <td>1 cup halved (152g)</td>
-        <td>Vitamin C (89.4mg), Fiber (3g), Manganese (0.6mg)</td>
-        <td>Fresh, in smoothies or with yogurt</td>
-        <td>Antioxidant-rich, heart and skin health</td>
-        <td>Sweet-tart taste; refreshing and uplifting</td>
-        <td>Vitamin C boosts collagen and antioxidant defenses</td>
-      </tr>
-      <tr>
-        <td>🥝 Kiwi</td>
-        <td>1 medium (69g)</td>
-        <td>Vitamin C (71mg), Fiber (2.1g), Vitamin E</td>
-        <td>Sliced fresh, in smoothies or fruit bowls</td>
-        <td>Digestive aid, immune boost, antioxidant-rich</td>
-        <td>Tangy and sweet; improves digestion</td>
-        <td>Contains enzymes for better digestion and immunity</td>
-      </tr>
-      <tr>
-        <td>🍉 Watermelon</td>
-        <td>1 cup diced (152g)</td>
-        <td>Vitamin C (12.5mg), Lycopene (6,890mcg), Water (91%)</td>
-        <td>Fresh cubes, smoothies, or juice</td>
-        <td>Hydration, skin support, anti-inflammatory</td>
-        <td>Very refreshing; cooling and sweet</td>
-        <td>Lycopene helps protect skin and supports heart</td>
-      </tr>
-      <tr>
-        <td>🍊 Orange</td>
-        <td>1 medium (131g)</td>
-        <td>Vitamin C (69.7mg), Fiber (3.1g), Folate (39mcg)</td>
-        <td>Fresh peeled, juiced, or sliced</td>
-        <td>Immunity, skin support, reduces inflammation</td>
-        <td>Juicy and tangy; boosts alertness</td>
-        <td>Vitamin C helps with iron absorption and immune strength</td>
-      </tr>
+      <tr><td>NAG</td><td>1000 mg</td><td>Morning</td><td>With food</td><td>Supports gut lining and repair</td><td>Improved digestion, reduced gut irritation</td><td>Helps rebuild gut lining</td></tr>
+      <tr><td>BPC-157</td><td>1000 mcg</td><td>Morning</td><td>With food</td><td>Promotes tissue & gut healing</td><td>Reduced pain/inflammation, faster recovery</td><td>Accelerates tissue healing</td></tr>
+      <tr><td>Caffeine</td><td>100 mg</td><td>Morning (sparingly)</td><td>After food</td><td>Energy and alertness</td><td>Increased focus, possible jitteriness</td><td>Stimulates CNS</td></tr>
+      <tr><td>DGL + Anise Seed</td><td>400 mg + 55 mg</td><td>Before heavy meals</td><td>Before food</td><td>Supports digestion and gut health</td><td>Reduced heartburn, less bloating</td><td>Soothes stomach lining</td></tr>
+      <tr><td>Magnesium Glycinate</td><td>200 mg</td><td>Night</td><td>Any</td><td>Supports relaxation and sleep</td><td>Easier sleep onset, reduced muscle tension</td><td>Relaxant mineral</td></tr>
+      <tr><td>R-Lipoic Acid</td><td>300 mg</td><td>Morning</td><td>With food</td><td>Antioxidant, supports mitochondria</td><td>Improved energy metabolism, reduced oxidative stress</td><td>Powerful antioxidant</td></tr>
+      <tr><td>Probiotic</td><td>Varies</td><td>Morning</td><td>Empty stomach</td><td>Gut health support</td><td>Improved digestion, balanced gut flora</td><td>Beneficial bacteria</td></tr>
+      <tr><td>L-Tyrosine</td><td>500 mg</td><td>Morning</td><td>With food</td><td>Supports focus and mood</td><td>Increased alertness, reduced stress</td><td>Dopamine precursor</td></tr>
+      <tr><td>Ginkgo Biloba</td><td>125 mg</td><td>Morning</td><td>With food</td><td>Improves blood flow and cognition</td><td>Enhanced memory and focus</td><td>Boosts brain circulation</td></tr>
+      <tr><td>NMNH</td><td>250 mg</td><td>Morning</td><td>Empty stomach</td><td>Supports NAD+ metabolism</td><td>Increased cellular energy</td><td>Boosts energy production</td></tr>
+      <tr><td>Melatonin</td><td>1-3 mg</td><td>Night (as needed)</td><td>Any</td><td>Sleep aid</td><td>Faster sleep onset, improved quality</td><td>Regulates sleep cycle</td></tr>
+      <tr><td>Zinc Carnosine</td><td>18 mg zinc / 86 mg compound</td><td>Morning</td><td>With food</td><td>Gut lining and immune support</td><td>Reduced gut inflammation</td><td>Strengthens gut lining</td></tr>
+      <tr><td>KSM-66 (Ashwagandha)</td><td>600 mg</td><td>Morning (paused)</td><td>Empty stomach</td><td>Stress reduction</td><td>Reduced anxiety, improved mood</td><td>Adaptogen</td></tr>
+      <tr><td>Vitamin D3</td><td>125 mcg (5000 IU)</td><td>Morning (as needed)</td><td>With food</td><td>Immunity and bone health</td><td>Improved mood, better immune response</td><td>Essential vitamin</td></tr>
+      <tr><td>L-Theanine</td><td>100 mg</td><td>Morning</td><td>With food</td><td>Calm focus</td><td>Reduced stress, relaxed alertness</td><td>Amino acid promoting calmness</td></tr>
+      <tr><td>CoQ10</td><td>Varies</td><td>Morning (not daily)</td><td>With food</td><td>Supports heart and energy</td><td>Increased energy, reduced fatigue</td><td>Cell energy support</td></tr>
+      <tr><td>Hydrolyzed Collagen + L-Ornithine</td><td>4000 mg + 60 mg</td><td>Morning</td><td>With food</td><td>Supports skin and joints</td><td>Improved skin elasticity, joint comfort</td><td>Collagen & tissue repair</td></tr>
+      <tr><td>Taurine</td><td>1000 mg</td><td>Morning</td><td>With food or empty stomach</td><td>Hydration and calm</td><td>Improved hydration, reduced anxiety</td><td>Supports cell hydration</td></tr>
+      <tr><td>Vitamin C</td><td>1000 mg</td><td>Morning (paused)</td><td>With food</td><td>Antioxidant and immune support</td><td>Improved immune response</td><td>Powerful antioxidant</td></tr>
+      <tr><td>Rhodiola Rosea</td><td>250 mg (4:1 extract)</td><td>Morning</td><td>With food</td><td>Stress resilience and endurance</td><td>Reduced fatigue, improved stamina</td><td>Adaptogen</td></tr>
+      <tr><td>NAC</td><td>600 mg</td><td>Morning</td><td>Empty stomach</td><td>Liver support and antioxidant</td><td>Improved detoxification, lung support</td><td>Boosts glutathione</td></tr>
+      <tr><td>Beef Liver</td><td>1500 mg</td><td>Morning</td><td>With food</td><td>Nutrient-dense organ support</td><td>Increased energy, better nutrient status</td><td>Rich vitamin/mineral source</td></tr>
+      <tr><td>Vegan Omega-3 (DHA + EPA)</td><td>500 mg algal oil (225 mg omega-3)</td><td>Morning</td><td>With food</td><td>Brain and heart support</td><td>Improved cognition, reduced inflammation</td><td>Essential fatty acids</td></tr>
+      <tr><td>Lutein + Zeaxanthin</td><td>25 mg + 5 mg</td><td>Morning</td><td>With food</td><td>Supports eye health</td><td>Reduced eye strain, better vision</td><td>Eye carotenoids</td></tr>
+      <tr><td>Astaxanthin</td><td>4 mg</td><td>Morning</td><td>With food</td><td>Potent antioxidant, skin support</td><td>Improved skin appearance</td><td>Strong antioxidant</td></tr>
+      <tr><td>Creatine</td><td>5 g</td><td>Morning</td><td>Empty stomach</td><td>Supports strength & recovery</td><td>Improved workout performance</td><td>Quick energy supply</td></tr>
+      <tr><td>L-Glutamine</td><td>5 g</td><td>Morning</td><td>Empty stomach</td><td>Supports gut lining, muscle recovery</td><td>Improved gut comfort, reduced soreness</td><td>Amino acid support</td></tr>
+    </tbody>
+  </table>
+</section>
 
-      <!-- Vegetables -->
-      <tr><th colspan="7" style="background:#d9f8e3;">🥦 Vegetables</th></tr>
-      <tr>
-        <td>🥕 Carrots</td>
-        <td>1 medium (61g)</td>
-        <td>Beta-carotene (5,054mcg), Fiber (1.7g), Vitamin K</td>
-        <td>Raw, steamed, roasted, juiced</td>
-        <td>Eye health, immune support, antioxidant protection</td>
-        <td>Crunchy and sweet when raw; vision may improve over time</td>
-        <td>Converts to vitamin A, essential for vision and skin</td>
-      </tr>
-      <tr>
-        <td>🟢 Peas (Green)</td>
-        <td>1/2 cup cooked (80g)</td>
-        <td>Protein (4.3g), Fiber (4.4g), Vitamin C</td>
-        <td>Boiled, sautéed, steamed</td>
-        <td>Heart health, digestion, plant protein</td>
-        <td>Starchy and sweet; may stabilize energy</td>
-        <td>High fiber helps digestion and supports blood sugar control</td>
-      </tr>
-      <tr>
-        <td>🥑 Avocado</td>
-        <td>1/2 medium (100g)</td>
-        <td>Healthy fats (15g), Fiber (7g), Potassium</td>
-        <td>Sliced, mashed, in spreads</td>
-        <td>Heart health, anti-inflammatory</td>
-        <td>Creamy; helps you feel full</td>
-        <td>Monounsaturated fats support brain and heart</td>
-      </tr>
-      <tr>
-        <td>🌶️ Jalapeño</td>
-        <td>1 medium (14g)</td>
-        <td>Vitamin C, Capsaicin, Vitamin B6</td>
-        <td>Raw, grilled, stuffed</td>
-        <td>Boosts metabolism, pain relief</td>
-        <td>Spicy; increases alertness</td>
-        <td>Capsaicin helps circulation and thermogenesis</td>
-      </tr>
-      <tr>
-        <td>🌿 Spinach</td>
-        <td>1 cup raw (30g)</td>
-        <td>Vitamin K (145mcg), Iron (0.8mg), Folate</td>
-        <td>Raw, steamed, sautéed</td>
-        <td>Bone strength, blood building</td>
-        <td>Neutral flavor; energizing long term</td>
-        <td>Rich in nutrients for red blood cell formation</td>
-      </tr>
+<!-- Diet & Food Tracker -->
+<section id="diet">
+  <h2>Diet & Food Tracker</h2>
 
-      <!-- Proteins & Carbohydrates -->
-      <tr><th colspan="7" style="background:#f9f0dd;">🍗 Proteins & Carbohydrates</th></tr>
+  <h3>Fruits</h3>
+  <table>
+    <thead>
+      <tr><th>Fruit</th><th>Serving</th><th>Key Nutrients</th><th>Preparation</th><th>Benefits</th><th>Taste/Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Pineapple 🍍</td><td>1 cup chunks (165g)</td><td>Vitamin C, Manganese, Bromelain</td><td>Fresh, juiced, grilled</td><td>Immune support, digestion aid</td><td>Sweet, juicy; may cause tingling</td></tr>
+      <tr><td>Cantaloupe 🍈</td><td>1 cup (160g)</td><td>Vitamin A, Vitamin C, Potassium</td><td>Fresh slices, smoothies</td><td>Skin health, hydration</td><td>Cooling, mild sweetness</td></tr>
+      <tr><td>Strawberry 🍓</td><td>1 cup halved (152g)</td><td>Vitamin C, Fiber, Manganese</td><td>Fresh, smoothies, yogurt</td><td>Antioxidant, heart & skin health</td><td>Sweet-tart, refreshing</td></tr>
+      <tr><td>Kiwi 🥝</td><td>1 medium (69g)</td><td>Vitamin C, Fiber, Vitamin E</td><td>Fresh, smoothies, bowls</td><td>Digestive aid, immune boost</td><td>Tangy, sweet</td></tr>
+      <tr><td>Watermelon 🍉</td><td>1 cup diced (152g)</td><td>Vitamin C, Lycopene</td><td>Fresh, smoothies, juice</td><td>Hydration, anti-inflammatory</td><td>Very refreshing, cooling</td></tr>
+      <tr><td>Orange 🍊</td><td>1 medium (131g)</td><td>Vitamin C, Fiber, Folate</td><td>Fresh, juiced, sliced</td><td>Immunity, skin support</td><td>Juicy, tangy</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Vegetables</h3>
+  <table>
+    <thead>
+      <tr><th>Vegetable</th><th>Serving</th><th>Key Nutrients</th><th>Preparation</th><th>Benefits</th><th>Taste/Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Carrots 🥕</td><td>1 medium (61g)</td><td>Beta-carotene, Fiber, Vitamin K</td><td>Raw, steamed, roasted</td><td>Eye health, immune support</td><td>Crunchy, sweet raw</td></tr>
+      <tr><td>Peas 🟢</td><td>1/2 cup cooked (80g)</td><td>Protein, Fiber, Vitamin C</td><td>Boiled, sautéed, steamed</td><td>Heart health, digestion</td><td>Starchy, sweet</td></tr>
+      <tr><td>Avocado 🥑</td><td>1/2 medium (100g)</td><td>Healthy fats, Fiber, Potassium</td><td>Sliced, mashed, spreads</td><td>Heart health, anti-inflammatory</td><td>Creamy, filling</td></tr>
+      <tr><td>Jalapeño 🌶️</td><td>1 medium (14g)</td><td>Vitamin C, Capsaicin, Vitamin B6</td><td>Raw, grilled, stuffed</td><td>Boosts metabolism, pain relief</td><td>Spicy, alertness boost</td></tr>
+      <tr><td>Spinach 🌿</td><td>1 cup raw (30g)</td><td>Vitamin K, Iron, Folate</td><td>Raw, steamed, sautéed</td><td>Bone strength, blood building</td><td>Neutral flavor</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Proteins & Carbohydrates</h3>
+  <table>
+    <thead>
+      <tr><th>Food</th><th>Serving</th><th>Key Nutrients</th><th>Preparation</th><th>Benefits</th><th>Taste/Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Egg 🥚</td><td>1 large (50g)</td><td>Protein, Choline, Vitamin B12</td><td>Boiled, scrambled, fried</td><td>Brain health, muscle repair</td><td>Filling, energizing</td></tr>
+      <tr><td>Shrimp 🍤</td><td>3 oz (85g)</td><td>Protein, Selenium, Iodine</td><td>Boiled, grilled, sautéed</td><td>Thyroid function, lean muscle</td><td>Light, clean taste</td></tr>
+      <tr><td>Chicken Breast 🍗</td><td>3 oz cooked (85g)</td><td>Protein, Niacin, B6</td><td>Grilled, baked, stir-fried</td><td>Muscle growth, immune health</td><td>Hearty, satisfying</td></tr>
+      <tr><td>Milk 🥛</td><td>1 cup (244g)</td><td>Calcium, Protein, Vitamin D</td><td>Cold, warm, blended</td><td>Bone health, hydration</td><td>Comforting, post-workout</td></tr>
+      <tr><td>Cheese (Cheddar) 🧀</td><td>1 slice (28g)</td><td>Calcium, Protein, Fat</td><td>Sliced, melted</td><td>Bone support, high calorie</td><td>Savory, dense</td></tr>
+      <tr><td>Rice (White) 🍚</td><td>1 cup cooked (158g)</td><td>Carbs, Protein, Low fat</td><td>Boiled, steamed</td><td>Quick energy, glycogen refill</td><td>Soft, filling</td></tr>
+      <tr><td>Beans (Black/Pinto) 🫘</td><td>1/2 cup cooked (86g)</td><td>Protein, Fiber, Folate, Iron</td><td>Boiled, refried, stewed</td><td>Gut health, blood sugar control</td><td>Earthy, filling</td></tr>
+      <tr><td>Corn Tortilla 🌮</td><td>1 medium (28g)</td><td>Carbs, Fiber, Iron</td><td>Grilled, warmed, filled</td><td>Convenient energy</td><td>Chewy, mild flavor</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Topical Tracker -->
+<section id="topicals">
+  <h2>Topical Tracker</h2>
+  <table>
+    <thead>
+      <tr><th>Product</th><th>When to Apply</th><th>How to Apply</th><th>Benefits</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
       <tr>
-        <td>🥚 Egg</td>
-        <td>1 large (50g)</td>
-        <td>Protein (6g), Choline (147mg), Vitamin B12</td>
-        <td>Boiled, scrambled, fried</td>
-        <td>Brain health, muscle repair</td>
-        <td>Filling and energizing</td>
-        <td>Complete protein with essential nutrients for the brain</td>
+        <td>Vanicream</td>
+        <td>After face cleanse or water</td>
+        <td>Apply to damp face or body</td>
+        <td>Moisturizes without irritation</td>
+        <td>Hydrated, soothing, non-greasy</td>
       </tr>
       <tr>
-        <td>🍤 Shrimp</td>
-        <td>3 oz (85g)</td>
-        <td>Protein (20g), Selenium (34mcg), Iodine</td>
-        <td>Boiled, grilled, sautéed</td>
-        <td>Thyroid function, lean muscle</td>
-        <td>Light, clean taste; high satiety</td>
-        <td>Selenium and iodine support metabolism</td>
-      </tr>
-      <tr>
-        <td>🍗 Chicken (Breast)</td>
-        <td>3 oz cooked (85g)</td>
-        <td>Protein (26g), Niacin, B6</td>
-        <td>Grilled, baked, stir-fried</td>
-        <td>Muscle growth, immune health</td>
-        <td>Hearty and satisfying</td>
-        <td>Lean protein supports recovery and tissue growth</td>
-      </tr>
-      <tr>
-        <td>🥛 Milk</td>
-        <td>1 cup (244g)</td>
-        <td>Calcium (276mg), Protein (8g), Vitamin D</td>
-        <td>Cold, warm, blended</td>
-        <td>Bone health, hydration</td>
-        <td>Comforting; good post-workout</td>
-        <td>Supports bones and nerves via calcium and D</td>
-      </tr>
-      <tr>
-        <td>🧀 Cheese (Cheddar)</td>
-        <td>1 slice (28g)</td>
-        <td>Calcium (202mg), Protein (7g), Fat (9g)</td>
-        <td>Sliced, melted</td>
-        <td>Bone support, high-calorie fuel</td>
-        <td>Savory and dense</td>
-        <td>Good for muscle and weight gain</td>
-      </tr>
-      <tr>
-        <td>🍚 Rice (White)</td>
-        <td>1 cup cooked (158g)</td>
-        <td>Carbs (45g), Protein (4g), Low fat</td>
-        <td>Boiled or steamed</td>
-        <td>Quick energy, muscle glycogen refill</td>
-        <td>Soft and filling; fast-acting fuel</td>
-        <td>Primary carb source for energy and recovery</td>
-      </tr>
-      <tr>
-        <td>🫘 Beans (Black or Pinto)</td>
-        <td>1/2 cup cooked (86g)</td>
-        <td>Protein (7.6g), Fiber (7.5g), Folate, Iron</td>
-        <td>Boiled, refried, stewed</td>
-        <td>Gut health, blood sugar stability</td>
-        <td>Earthy, satisfying; filling</td>
-        <td>Fiber and protein combo supports digestion and satiety</td>
-      </tr>
-      <tr>
-        <td>🌮 Tortilla (Corn)</td>
-        <td>1 medium (28g)</td>
-        <td>Carbs (12g), Fiber (1g), Iron (0.4mg)</td>
-        <td>Grilled, warmed, filled</td>
-        <td>Convenient energy, supports traditional meals</td>
-        <td>Chewy, mild flavor; pairs with most foods</td>
-        <td>Simple carb, good with protein/fat to balance meals</td>
+        <td>White Petrolatum</td>
+        <td>Night only</td>
+        <td>Apply as barrier protectant after moisturizer</td>
+        <td>Protects skin barrier, locks moisture</td>
+        <td>Thick protective layer, seals skin</td>
       </tr>
     </tbody>
   </table>
 </section>
 
+<script>
+  const navButtons = document.querySelectorAll('nav button');
+  const sections = document.querySelectorAll('section');
 
+  navButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active class from all buttons
+      navButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
-  <section id="topicals">
-    <h2>Topical Tracker</h2>
-    <table role="table" aria-label="List of topicals">
-      <thead>
-        <tr>
-          <th scope="col">Topical</th>
-          <th scope="col">Application Time</th>
-          <th scope="col">Method</th>
-          <th scope="col">Purpose / Notes</th>
-          <th scope="col">Effect / Sensations</th>
-          <th scope="col">Body Role / Simple Explanation</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Vanicream</td>
-          <td>After face cleanse or splashing water</td>
-          <td>Apply to damp face or body</td>
-          <td>Moisturizes without irritation</td>
-          <td>Hydrated skin, soothing, non-greasy feel</td>
-          <td>Provides gentle hydration and soothes skin without clogging pores or irritation</td>
-        </tr>
-        <tr>
-          <td>White Petrolatum</td>
-          <td>Night only</td>
-          <td>Apply as barrier protectant to areas after moisturizer</td>
-          <td>Protects skin barrier, locks moisture</td>
-          <td>Thick protective layer, skin feels sealed and moisturized</td>
-          <td>Creates a moisture barrier to protect and lock hydration into the skin overnight</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+      // Hide all sections
+      sections.forEach(sec => sec.classList.remove('active'));
 
-  <script>
-    // Calculate total supplements count and update the div
-    const supplementTable = document.getElementById('supplement-table');
-    const totalCountDiv = document.getElementById('total-count');
-    const supplementCount = supplementTable.tBodies[0].rows.length;
-    totalCountDiv.textContent = `Total supplements listed: ${supplementCount}`;
-  </script>
+      // Show target section
+      const target = btn.getAttribute('data-target');
+      document.getElementById(target).classList.add('active');
+    });
+  });
+</script>
 
 </body>
 </html>
